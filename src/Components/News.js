@@ -277,10 +277,10 @@ export default class News extends Component {
   }
   render() {
     return (
-      <div className="container my-4">
+      <div className="container my-5">
         <h2>Top Headlines</h2>
 
-        <div className="row">
+        <div className="row my-4">
           {this.article.map((news) => (
             <div className="col-md-4">
               <NewsItem
