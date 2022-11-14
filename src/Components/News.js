@@ -12,7 +12,7 @@ export default class News extends Component {
       title:
         "Exclusive: Russian software disguised as American finds its way into U.S. Army, CDC apps - Reuters",
       description:
-        'Thousands of smartphone applications in Apple <a href="https://www.reuters.com/companies/AAPL.O" target="_blank">(AAPL.O)</a> and Google\'s <a href="https://www.reuters.com/companies/GOOGL.O" target="_blank">(GOOGL.O)</a> online stores contain computer code de…',
+        "Thousands of smartphone applications in Apple online stores contain computer code de…",
       url: "https://www.reuters.com/technology/exclusive-russian-software-disguised-american-finds-its-way-into-us-army-cdc-2022-11-14/",
       urlToImage:
         "https://www.reuters.com/resizer/5O8xyUA9uViWpkAHhQc0l7LukFc=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/HRE4R5QXJ5PDVA7FTUXZJRMFGE.jpg",
@@ -281,9 +281,15 @@ export default class News extends Component {
         <h2>Top Headlines</h2>
 
         <div className="row">
-          <div className="col-md-4">
-            <NewsItem />
-          </div>
+          {this.article.map((news) => (
+            <div className="col-md-4">
+              <NewsItem
+                title={news.title}
+                description={news.description}
+                imageURL={news.urlToImage}
+              />
+            </div>
+          ))}
         </div>
       </div>
     );
