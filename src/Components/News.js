@@ -281,7 +281,7 @@ export default class News extends Component {
         <h2>Top Headlines</h2>
 
         <div className="row my-4">
-          {this.article.map((news) => (
+          {this.state.articles.map((news) => (
             <div className="col-md-4">
               <NewsItem
                 title={news.title}
