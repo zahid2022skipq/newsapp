@@ -45,7 +45,7 @@ export default class News extends Component {
             </div>
           ))}
         </div>
-        <div className="container my-5">
+        <div className="container my-5  d-flex justify-content-between">
           <button
             type="button"
             class="btn btn-primary"
