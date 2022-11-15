@@ -15,7 +15,8 @@ export default class News extends Component {
       "https://newsapi.org/v2/top-headlines?" +
       "country=us&" +
       "apiKey=5d6b97044eb6443c9029b9103e296eb1" +
-      `&page=${this.state.page}`;
+      `&page=${this.state.page}` +
+      "&pageSize=9";
 
     let data = await fetch(url);
 
@@ -28,7 +29,8 @@ export default class News extends Component {
       "https://newsapi.org/v2/top-headlines?" +
       "country=us&" +
       "apiKey=5d6b97044eb6443c9029b9103e296eb1" +
-      `&page=${this.state.page + 1}`;
+      `&page=${this.state.page + 1}` +
+      "&pageSize=9";
 
     let data = await fetch(url);
 
@@ -42,7 +44,7 @@ export default class News extends Component {
       "country=us&" +
       "apiKey=5d6b97044eb6443c9029b9103e296eb1" +
       `&page=${this.state.page - 1}` +
-      "&pageSize=2";
+      "&pageSize=9";
 
     let data = await fetch(url);
 
