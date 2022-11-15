@@ -29,17 +29,17 @@ export default class News extends Component {
       loading: true,
     });
 
-    this.componentDidMount();
+    await this.componentDidMount();
   };
 
-  handlePrevPage = (async = () => {
+  handlePrevPage = async () => {
     this.setState({
       page: this.state.page - 1,
       loading: true,
     });
 
-    this.componentDidMount();
-  });
+    await this.componentDidMount();
+  };
 
   render() {
     return (
@@ -62,6 +62,7 @@ export default class News extends Component {
             type="button"
             className="btn btn-primary"
             onClick={this.handleNextPage}
+            disabled={this.state.page <= 1}
           >
             &#8592; Previous
           </button>
