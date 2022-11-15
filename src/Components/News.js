@@ -25,12 +25,20 @@ export default class News extends Component {
 
   handleNextPage = async () => {
     this.setState({
-      page: this.state.page + 1,
+      page: this.state.page,
       loading: true,
     });
 
-    await this.componentDidMount();
-    console.log(this.state.page);
+    let url =
+      "https://newsapi.org/v2/top-headlines?" +
+      "country=us&" +
+      "apiKey=5d6b97044eb6443c9029b9103e296eb1" +
+      `&page=${this.state.page}`;
+
+    let data = await fetch(url);
+
+    let parsedData = await data.json();
+    this.setState({ articles: parsedData.articles });
   };
 
   handlePrevPage = async () => {
@@ -39,8 +47,16 @@ export default class News extends Component {
       loading: true,
     });
 
-    await this.componentDidMount();
-    console.log(this.state.page);
+    let url =
+      "https://newsapi.org/v2/top-headlines?" +
+      "country=us&" +
+      "apiKey=5d6b97044eb6443c9029b9103e296eb1" +
+      `&page=${this.state.page}`;
+
+    let data = await fetch(url);
+
+    let parsedData = await data.json();
+    this.setState({ articles: parsedData.articles });
   };
 
   render() {
