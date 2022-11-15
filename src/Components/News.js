@@ -63,7 +63,7 @@ export default class News extends Component {
           <button
             type="button"
             className="btn btn-primary"
-            onClick={this.handleNextPage}
+            onClick={this.handlePrevPage}
             disabled={this.state.page <= 1}
           >
             &#8592; Previous
@@ -71,7 +71,7 @@ export default class News extends Component {
           <button
             type="button"
             className="btn btn-primary"
-            onClick={this.handlePrevPage}
+            onClick={this.handleNextPage}
             disabled={this.state.page >= this.state.articles.length - 1}
           >
             Next &#8594;
