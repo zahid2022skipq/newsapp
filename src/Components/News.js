@@ -61,7 +61,7 @@ export default class News extends Component {
   render() {
     return (
       <div className="container my-5">
-        <h2>Top Headlines</h2>
+        <h2 className="text-center">Top Headlines</h2>
 
         <div className="row my-4">
           {this.state.articles.map((news) => (
@@ -88,7 +88,7 @@ export default class News extends Component {
             className="btn btn-primary"
             onClick={this.handleNextPage}
             disabled={
-              this.state.page >= Math.ceil(this.state.totalResults / 9) - 2
+              this.state.page + 1 >= Math.ceil(this.state.totalResults / 9)
             }
           >
             Next &#8594;
