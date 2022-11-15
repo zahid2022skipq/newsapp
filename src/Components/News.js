@@ -21,7 +21,10 @@ export default class News extends Component {
     let data = await fetch(url);
 
     let parsedData = await data.json();
-    this.setState({ articles: parsedData.articles });
+    this.setState({
+      articles: parsedData.articles,
+      totalResults: 38,
+    });
   }
 
   handleNextPage = async () => {
@@ -35,7 +38,10 @@ export default class News extends Component {
     let data = await fetch(url);
 
     let parsedData = await data.json();
-    this.setState({ articles: parsedData.articles, page: this.state.page + 1 });
+    this.setState({
+      articles: parsedData.articles,
+      page: this.state.page + 1,
+    });
   };
 
   handlePrevPage = async () => {
@@ -81,7 +87,9 @@ export default class News extends Component {
             type="button"
             className="btn btn-primary"
             onClick={this.handleNextPage}
-            disabled={this.state.page >= this.state.articles.length - 2}
+            disabled={
+              this.state.page >= Math.ceil(this.state.totalResults / 9) - 2
+            }
           >
             Next &#8594;
           </button>
