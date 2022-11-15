@@ -5,7 +5,7 @@ export default class News extends Component {
     super();
     this.state = {
       articles: [],
-      loading: false,
+      loading: true,
       page: 1,
     };
   }
@@ -23,10 +23,23 @@ export default class News extends Component {
     this.setState({ articles: parsedData.articles });
   }
 
-  handleNextPage = () => {
-    const n_page = this.state.page + 1;
-    this.setState({ page: n_page });
+  handleNextPage = async () => {
+    this.setState({
+      page: this.state.page + 1,
+      loading: true,
+    });
+
+    this.componentDidMount();
   };
+
+  handlePrevPage = (async = () => {
+    this.setState({
+      page: this.state.page - 1,
+      loading: true,
+    });
+
+    this.componentDidMount();
+  });
 
   render() {
     return (
@@ -55,7 +68,7 @@ export default class News extends Component {
           <button
             type="button"
             className="btn btn-primary"
-            onClick={this.handleNextPage}
+            onClick={this.handlePrevPage}
           >
             Next &#8594;
           </button>
