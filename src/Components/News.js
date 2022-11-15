@@ -45,7 +45,14 @@ export default class News extends Component {
             </div>
           ))}
         </div>
-        <div className="row my-5">
+        <div className="container my-5">
+          <button
+            type="button"
+            class="btn btn-primary"
+            onClick={this.handleNextPage}
+          >
+            Previous
+          </button>
           <button
             type="button"
             class="btn btn-primary"
