@@ -30,6 +30,7 @@ export default class News extends Component {
     });
 
     await this.componentDidMount();
+    console.log(this.state.page);
   };
 
   handlePrevPage = async () => {
