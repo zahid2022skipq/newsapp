@@ -12,10 +12,8 @@ export default class News extends Component {
 
   async componentDidMount() {
     let url =
-      "https://newsapi.org/v2/everything?" +
-      "q=Apple&" +
-      "from=2022-11-15&" +
-      "sortBy=popularity&" +
+      "https://newsapi.org/v2/top-headlines?" +
+      "country=us&" +
       "apiKey=5d6b97044eb6443c9029b9103e296eb1" +
       `&page=${this.state.page}`;
 
@@ -23,7 +21,13 @@ export default class News extends Component {
 
     let parsedData = await data.json();
     this.setState({ articles: parsedData.articles });
+    console.log(this.state.page);
   }
+
+  handleNextPage = () => {
+    const n_page = this.state.page + 1;
+    this.setState({ page: n_page });
+  };
 
   render() {
     return (
@@ -41,7 +45,15 @@ export default class News extends Component {
             </div>
           ))}
         </div>
-        <div className="row my-5"></div>
+        <div className="row my-5">
+          <button
+            type="button"
+            class="btn btn-primary"
+            onClick={this.handleNextPage}
+          >
+            Next
+          </button>
+        </div>
       </div>
     );
   }
