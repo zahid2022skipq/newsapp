@@ -72,7 +72,7 @@ export default class News extends Component {
             type="button"
             className="btn btn-primary"
             onClick={this.handleNextPage}
-            disabled={this.state.page >= this.state.articles.length - 1}
+            disabled={this.state.page >= this.state.articles.length - 2}
           >
             Next &#8594;
           </button>
