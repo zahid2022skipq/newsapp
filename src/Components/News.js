@@ -21,7 +21,6 @@ export default class News extends Component {
 
     let parsedData = await data.json();
     this.setState({ articles: parsedData.articles });
-    console.log(this.state.page);
   }
 
   handleNextPage = () => {
@@ -48,17 +47,17 @@ export default class News extends Component {
         <div className="container my-5  d-flex justify-content-between">
           <button
             type="button"
-            class="btn btn-primary"
+            className="btn btn-primary"
             onClick={this.handleNextPage}
           >
-            Previous
+            &#8592; Previous
           </button>
           <button
             type="button"
-            class="btn btn-primary"
+            className="btn btn-primary"
             onClick={this.handleNextPage}
           >
-            Next
+            Next &#8594;
           </button>
         </div>
       </div>
