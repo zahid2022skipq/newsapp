@@ -23,7 +23,7 @@ export default class News extends Component {
     let parsedData = await data.json();
     this.setState({
       articles: parsedData.articles,
-      totalResults: 38,
+      totalResults: parsedData.totalResults,
     });
   }
 
