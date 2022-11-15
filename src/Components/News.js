@@ -16,8 +16,8 @@ export default class News extends Component {
       "q=Apple&" +
       "from=2022-11-15&" +
       "sortBy=popularity&" +
-      "apiKey=5d6b97044eb6443c9029b9103e296eb1";
-    +`&page=${this.state.page}`;
+      "apiKey=5d6b97044eb6443c9029b9103e296eb1" +
+      `&page=${this.state.page}`;
 
     let data = await fetch(url);
 
