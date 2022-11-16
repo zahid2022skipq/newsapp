@@ -31,7 +31,7 @@ export default class News extends Component {
       `category=${this.props.category}&` +
       "apiKey=5d6b97044eb6443c9029b9103e296eb1" +
       `&page=${this.state.page}` +
-      "&pageSize=8";
+      "&pageSize=6";
 
     let data = await fetch(url);
 
@@ -52,7 +52,7 @@ export default class News extends Component {
         `category=${this.props.category}&` +
         "apiKey=5d6b97044eb6443c9029b9103e296eb1" +
         `&page=${this.state.page + 1}` +
-        "&pageSize=8";
+        "&pageSize=6";
 
       let data = await fetch(url);
 
@@ -74,7 +74,7 @@ export default class News extends Component {
         `category=${this.props.category}&` +
         "apiKey=5d6b97044eb6443c9029b9103e296eb1" +
         `&page=${this.state.page - 1}` +
-        "&pageSize=8";
+        "&pageSize=6";
 
       let data = await fetch(url);
 
@@ -120,7 +120,7 @@ export default class News extends Component {
                 className="btn btn-primary"
                 onClick={this.handleNextPage}
                 disabled={
-                  this.state.page + 1 >= Math.ceil(this.state.totalResults / 9)
+                  this.state.page + 1 >= Math.ceil(this.state.totalResults / 6)
                 }
               >
                 Next &#8594;
