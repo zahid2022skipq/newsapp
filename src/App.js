@@ -8,7 +8,7 @@ export default class App extends Component {
     return (
       <div className="container text-center">
         <Navbar />
-        <News country="us" />
+        <News country="au" category="sports" />
       </div>
     );
   }
