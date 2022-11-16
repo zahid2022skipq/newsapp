@@ -21,7 +21,13 @@ export default class App extends Component {
   ];
 
   NewsSelect = () => {
-    return <Select options={this.options} />;
+    return (
+      <Select
+        options={this.options}
+        isClearable
+        onChange={(choice) => this.setState({ country: choice.value })}
+      />
+    );
   };
 
   componentDidMount() {
