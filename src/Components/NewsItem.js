@@ -5,7 +5,7 @@ export default class NewsItem extends Component {
     let { title, description, imageURL } = this.props;
     return (
       <div className="my-2">
-        <div className="card" style={{ width: "18rem" }}>
+        <div className="card">
           <img src={`${imageURL}`} className="card-img-top" alt={title} />
           <div className="card-body">
             <h5 className="card-title">
@@ -14,7 +14,7 @@ export default class NewsItem extends Component {
             <p className="card-text">
               {description ? description.substring(0, 100) + "..." : ""}
             </p>
-            <a href="/" className="btn btn-primary">
+            <a href="/" className="btn btn-sm btn-dark">
               Read More
             </a>
           </div>

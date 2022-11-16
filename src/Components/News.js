@@ -89,7 +89,7 @@ export default class News extends Component {
 
   render() {
     return (
-      <div className="container my-2 p-2">
+      <div className="container my-2">
         <h2 className="text-center">Top Headlines</h2>
         {this.state.loading ? (
           <Spinner />
@@ -97,7 +97,7 @@ export default class News extends Component {
           <>
             <div className="row my-4">
               {this.state.articles.map((news) => (
-                <div key={news.url} className="col-md-3">
+                <div key={news.url} className="col-md-4">
                   <NewsItem
                     title={news.title}
                     description={news.description}
