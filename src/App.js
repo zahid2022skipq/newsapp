@@ -12,6 +12,12 @@ export default class App extends Component {
     };
   }
 
+  componentDidMount() {
+    this.setState({
+      country: "us",
+    });
+  }
+
   options = [
     { value: "us", label: "United States" },
     { value: "pakistan", label: "Pakistan" },
@@ -25,16 +31,11 @@ export default class App extends Component {
       <Select
         options={this.options}
         isClearable
+        defaultValue={"us"}
         onChange={(choice) => this.setState({ country: choice.value })}
       />
     );
   };
-
-  componentDidMount() {
-    this.setState({
-      country: "us",
-    });
-  }
 
   render() {
     return (
