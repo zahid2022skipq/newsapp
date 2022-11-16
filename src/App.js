@@ -31,7 +31,7 @@ export default class App extends Component {
       <Select
         options={this.options}
         isClearable
-        defaultValue={"us"}
+        defaultValue="us"
         onChange={(choice) => this.setState({ country: choice.value })}
       />
     );
@@ -43,6 +43,7 @@ export default class App extends Component {
         <Navbar />
         <div className="my-3 select">
           <this.NewsSelect />
+          <p>{this.state.country}</p>
         </div>
         <News country={this.state.country} />
       </div>
