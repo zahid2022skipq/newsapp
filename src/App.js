@@ -1,10 +1,8 @@
 import "./App.css";
-import reactSelect from "react-select";
-
 import React, { Component } from "react";
 import Navbar from "./Components/Navbar";
 import News from "./Components/News";
-import Select from "react-select/dist/declarations/src/Select";
+import Select from "react-select";
 
 export default class App extends Component {
   constructor() {
@@ -36,6 +34,9 @@ export default class App extends Component {
     return (
       <div className="container text-center">
         <Navbar />
+        <div className="my-3 select">
+          <this.NewsSelect />
+        </div>
         <News country={this.state.country} />
       </div>
     );
