@@ -16,7 +16,7 @@ export default class App extends Component {
     return (
       <div className="container text-center">
         <Navbar />
-        <News country={country} />
+        <News country={this.state.country} />
       </div>
     );
   }
