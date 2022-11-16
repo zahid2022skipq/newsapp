@@ -58,7 +58,7 @@ export default class News extends Component {
       this.setState({ loading: true });
       let url =
         "https://newsapi.org/v2/top-headlines?" +
-        "country=us&" +
+        `country=${this.props.country}&` +
         "apiKey=5d6b97044eb6443c9029b9103e296eb1" +
         `&page=${this.state.page - 1}` +
         "&pageSize=8";

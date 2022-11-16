@@ -5,11 +5,18 @@ import Navbar from "./Components/Navbar";
 import News from "./Components/News";
 
 export default class App extends Component {
+  constructor() {
+    super();
+    this.setState({
+      country: "us",
+    });
+  }
+
   render() {
     return (
-      <div>
+      <div className="container text-center">
         <Navbar />
-        <News />
+        <News country={country} />
       </div>
     );
   }
