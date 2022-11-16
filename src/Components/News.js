@@ -4,6 +4,15 @@ import Spinner from "./Spinner";
 import PropTypes from "prop-types";
 
 export default class News extends Component {
+  static defautProps = {
+    country: "us",
+    category: "science",
+  };
+
+  static propTypes = {
+    country: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+  };
   constructor() {
     super();
     this.state = {
