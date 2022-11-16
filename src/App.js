@@ -9,21 +9,25 @@ export default class App extends Component {
     super();
     this.state = {
       country: "us",
+      newsType: "Apple",
     };
   }
+  url = "";
 
   componentDidMount() {
     this.setState({
       country: "us",
+      newsType: "Apple",
     });
+
+    this.url = `https://newsapi.org/v2/everything?q=${this.state.newsType}&from=2022-11-16&sortBy=popularity&apiKey=5d6b97044eb6443c9029b9103e296eb1`;
   }
 
   options = [
-    { value: "us", label: "United States" },
-    { value: "pakistan", label: "Pakistan" },
-    { value: "india", label: "India" },
-    { value: "china", label: "China" },
-    { value: "australia", label: "Australia" },
+    { value: "Apple", label: "Apple" },
+    { value: "Cricket", label: "Cricket" },
+    { value: "Finance", label: "Finance" },
+    { value: "Politics", label: "Politics" },
   ];
 
   NewsSelect = () => {
@@ -31,8 +35,8 @@ export default class App extends Component {
       <Select
         options={this.options}
         isClearable
-        defaultValue="us"
-        onChange={(choice) => this.setState({ country: choice.value })}
+        defaultValue="Apple"
+        onChange={(choice) => this.setState({ newsType: choice.value })}
       />
     );
   };
@@ -42,10 +46,11 @@ export default class App extends Component {
       <div className="container text-center">
         <Navbar />
         <div className="my-3 select">
+          <h4>Select News Type</h4>
           <this.NewsSelect />
-          <p>{this.state.country}</p>
+          <p>{this.state.newsType}</p>
         </div>
-        <News country={this.state.country} />
+        <News country={this.state.country} newsType={this.state.newsType} />
       </div>
     );
   }
