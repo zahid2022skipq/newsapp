@@ -105,6 +105,7 @@ export default class News extends Component {
                     url={news.url}
                     newsTime={news.publishedAt}
                     author={news.author}
+                    source={news.source.name}
                   />
                 </div>
               ))}

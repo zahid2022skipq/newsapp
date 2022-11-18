@@ -2,10 +2,14 @@ import React, { Component } from "react";
 
 export default class NewsItem extends Component {
   render() {
-    let { title, description, imageURL, url, newsTime, author } = this.props;
+    let { title, description, imageURL, url, newsTime, author, source } =
+      this.props;
     return (
       <div className="my-2">
         <div className="card">
+          <span class="position-absolute  start-50 translate-middle badge rounded-pill bg-danger">
+            {source}
+          </span>
           <img
             src={
               imageURL
