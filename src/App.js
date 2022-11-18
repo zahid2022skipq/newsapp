@@ -38,6 +38,10 @@ export default class App extends Component {
               path="/technology"
               element={<News country="us" category="technology" />}
             />
+            <Route
+              path="/general"
+              element={<News country="us" category="general" />}
+            />
           </Routes>
         </div>
       </Router>
