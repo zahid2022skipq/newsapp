@@ -4,6 +4,19 @@ import Navbar from "./Components/Navbar";
 import News from "./Components/News";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 export default class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      category: "us",
+    };
+  }
+
+  componentDidMount() {
+    this.setState({
+      category: "us",
+    });
+  }
+
   render() {
     return (
       <Router>
