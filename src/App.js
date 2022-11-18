@@ -4,19 +4,6 @@ import Navbar from "./Components/Navbar";
 import News from "./Components/News";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 export default class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      category: "us",
-    };
-  }
-
-  componentDidMount() {
-    this.setState({
-      category: "us",
-    });
-  }
-
   render() {
     return (
       <Router>
@@ -25,35 +12,43 @@ export default class App extends Component {
           <Routes>
             <Route
               path="/"
-              element={<News country="us" category="general" />}
+              element={<News key="home" country="us" category="general" />}
             />
             <Route
               path="/business"
-              element={<News country="us" category="business" />}
+              element={<News key="business" country="us" category="business" />}
             />
             <Route
               path="/entertainment"
-              element={<News country="us" category="entertainment" />}
+              element={
+                <News
+                  key="entertainment"
+                  country="us"
+                  category="entertainment"
+                />
+              }
             />
             <Route
               path="/health"
-              element={<News country="us" category="health" />}
+              element={<News key="health" country="us" category="health" />}
             />
             <Route
               path="/science"
-              element={<News country="us" category="science" />}
+              element={<News key="science" country="us" category="science" />}
             />
             <Route
               path="/sports"
-              element={<News country="us" category="sports" />}
+              element={<News key="sports" country="us" category="sports" />}
             />
             <Route
               path="/technology"
-              element={<News country="us" category="technology" />}
+              element={
+                <News key="technology" country="us" category="technology" />
+              }
             />
             <Route
               path="/general"
-              element={<News country="us" category="general" />}
+              element={<News key="general" country="us" category="general" />}
             />
           </Routes>
         </div>
