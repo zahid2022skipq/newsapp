@@ -18,13 +18,13 @@ export default class NewsItem extends Component {
           <div className="card-body">
             <h5 className="card-title">{title && title}</h5>
             <p className="card-text">
-              <small className="text-muted">
-                By {author}
-                <br /> Time: {" " + Date(newsTime)}
-              </small>
+              {description && description.substring(0, 200)}
             </p>
             <p className="card-text">
-              {description && description.substring(0, 200)}
+              <small className="text-muted">
+                By {author ? author + " " : "Unknown "} Time:{" "}
+                {" " + Date(newsTime)}
+              </small>
             </p>
             <a
               rel="noreferrer"
