@@ -3,7 +3,6 @@ import React, { Component } from "react";
 export default class NewsItem extends Component {
   render() {
     let { title, description, imageURL, url } = this.props;
-    console.log(url);
     return (
       <div className="my-2">
         <div className="card">
