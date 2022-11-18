@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 export default class NewsItem extends Component {
   render() {
-    let { title, description, imageURL, url } = this.props;
+    let { title, description, imageURL, url, newsTime } = this.props;
     return (
       <div className="my-2">
         <div className="card">
@@ -19,8 +19,10 @@ export default class NewsItem extends Component {
             <h5 className="card-title">
               {title ? title.substring(0, 50) + "..." : ""}
             </h5>
-            <p class="card-text">
-              <small class="text-muted">Last updated 3 mins ago</small>
+            <p className="card-text">
+              <small className="text-muted">
+                Last updated {Date(newsTime)} mins ago
+              </small>
             </p>
             <p className="card-text">
               {description ? description.substring(0, 100) + "..." : ""}
