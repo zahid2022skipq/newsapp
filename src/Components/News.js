@@ -90,7 +90,7 @@ export default class News extends Component {
   render() {
     return (
       <div className="container my-2">
-        <h2 className="text-center">Top Headlines</h2>
+        <h2 className="text-center text-light">Top Headlines</h2>
         {this.state.loading ? (
           <Spinner />
         ) : (
