@@ -16,16 +16,15 @@ export default class NewsItem extends Component {
             alt={title}
           />
           <div className="card-body">
-            <h5 className="card-title">
-              {title ? title.substring(0, 50) + "..." : ""}
-            </h5>
+            <h5 className="card-title">{title && title}</h5>
             <p className="card-text">
               <small className="text-muted">
-                By {author + " " + Date(newsTime)}
+                By {author}
+                <br /> Time: {" " + Date(newsTime)}
               </small>
             </p>
             <p className="card-text">
-              {description ? description.substring(0, 100) + "..." : ""}
+              {description && description.substring(0, 200)}
             </p>
             <a
               rel="noreferrer"
