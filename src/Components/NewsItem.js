@@ -22,7 +22,12 @@ export default class NewsItem extends Component {
             <p className="card-text">
               {description ? description.substring(0, 100) + "..." : ""}
             </p>
-            <a rel="noreferrer" href={url} className="btn btn-sm btn-dark">
+            <a
+              rel="noreferrer"
+              target="_blank"
+              href={url}
+              className="btn btn-sm btn-dark"
+            >
               Read More
             </a>
           </div>
