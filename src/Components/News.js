@@ -102,6 +102,7 @@ export default class News extends Component {
                     title={news.title}
                     description={news.description}
                     imageURL={news.urlToImage}
+                    url={news.url}
                   />
                 </div>
               ))}

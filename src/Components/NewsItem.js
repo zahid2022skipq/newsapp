@@ -2,7 +2,8 @@ import React, { Component } from "react";
 
 export default class NewsItem extends Component {
   render() {
-    let { title, description, imageURL } = this.props;
+    let { title, description, imageURL, url } = this.props;
+    console.log(url);
     return (
       <div className="my-2">
         <div className="card">
@@ -22,7 +23,7 @@ export default class NewsItem extends Component {
             <p className="card-text">
               {description ? description.substring(0, 100) + "..." : ""}
             </p>
-            <a href="/" className="btn btn-sm btn-dark">
+            <a rel="noreferrer" href={url} className="btn btn-sm btn-dark">
               Read More
             </a>
           </div>
